@@ -7,12 +7,9 @@ const services = require('./data/service')
 const technologies = require('./data/technology')
 
 app.use(express.json())
+app.use(express.static('public'))
 
 const port = process.env.PORT || 4000
-
-app.get('/', async (req, res) => {
-    res.send('HOME')
-})
 
 app.get('/api/v1/projects', async (req, res) => {
     res.json(projects)
